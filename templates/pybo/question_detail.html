@@ -1,0 +1,62 @@
+
+{% load static %}
+{% load pybo_filter %}
+ <!--**********************************
+            Sidebar start
+    ***********************************-->
+    
+        
+
+        <!--**********************************
+            Content body start
+        ***********************************-->
+        {% if answer %}
+        <div class="content-body">
+
+            <div class="row page-titles mx-0">
+                <div class="col p-md-0">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">{{ answer.subject }}</li>
+                        <li class="breadcrumb-item active">{{ answer.author.username }}</li>
+                        <li class="breadcrumb-item">{{ answer.create_date }}</li>
+                    </ol>
+                </div>
+            </div>
+            <!-- row -->
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-body">
+                                {{ answer.content|mark }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- #/ container -->
+        </div>
+        {% else %}
+        <div class="content-body">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-body">
+                                {{ header_home.content|mark }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        {% endif %}
+        <!--**********************************
+            Content body end
+        ***********************************-->
+      
+        
+        
