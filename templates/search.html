@@ -1,21 +1,13 @@
-{% extends 'search_index.html' %}
-
-{% block content %}
-<div class="input-group icons">
-                        
-                        
-                        
-    <form  action="" method="post"> {% csrf_token %}
-        <div style="padding-top: 0.8em;">
-           {{ form }}
-         <!-- form을 테이블 형식으로 표시, 여기서 form은 views에서 넘겨준 PostSearchForm 객체임-->
-        <!-- 서치 아이콘_나중에 구현 -->
-         <!-- <i class="mdi mdi-magnify"></i> -->
+<div class="input-group icons">   
+           
+        <form  action="{% url 'pybo:search' %}" method="post" id="search" >
+            {% csrf_token %}
+            <div class="input-group-prepend">
+                <span onclick="document.getElementById('search').submit();" style="cursor:pointer;" class="input-group-text bg-transparent border-0 pr-2 pr-sm-3" id="basic-addon1"><i class="mdi mdi-magnify"></i></span>
+                <input type="text"name="search_word" class="form-control">
+            
+            </div>
+            
+        </form>
         
-         <input type="submit" value="Submit" class="btn btn-primary btn-sm" >
-        </div>
-    </form>
-
-
 </div>
-{% endblock %}

@@ -14,7 +14,7 @@ from django.db.models import Q
 
 class SearchFormView(FormView):
     form_class = PostSearchForm
-    template_name = 'search.html'
+    template_name = 'search_index.html'
     
     
 
@@ -34,7 +34,6 @@ class SearchFormView(FormView):
         
         
         return render(self.request, self.template_name, context)
-
 
 
 def index(request):

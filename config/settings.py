@@ -27,7 +27,7 @@ SECRET_KEY = 'pcrlezvm6%a97_#81iffy3p1ckwc^*cwo1p+thhpeo#k)iej#c'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['13.124.216.94']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -123,9 +123,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-STATIC_ROOT=os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
-
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',
+]
 # 로그인/로그아웃 성공후 이동하는 URL
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'

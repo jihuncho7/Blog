@@ -42,13 +42,12 @@
         ***********************************-->
         <div class="nav-header">
             <div class="brand-logo">
-                <a href="../../">
-                    <b class="logo-abbr"><img src="images/logo.png" alt=""> </b>
-                    <span class="logo-compact"><img src="./images/logo-compact.png" alt=""></span>
+               
+                    
                     <span class="brand-title">
-                        <img src="images/logo-text.png" alt="">
+                        <a href="../../"><img src="{% static '/images/logo-text.svg' %}" alt="" style="float: left; width:100%; clear: both; position:absolute; top:25px; left: 4%;;" > </a>
                     </span>
-                </a>
+                
             </div>
         </div>
         <!--**********************************
@@ -67,7 +66,13 @@
                     </div>
                 </div>
                 <div class="header-left">
-                    <a href="{{ search_url }}">검색하기</a>
+                   
+                            {% include "search.html" %}
+                         <!-- form을 테이블 형식으로 표시, 여기서 form은 views에서 넘겨준 PostSearchForm 객체임-->
+                        <!-- 서치 아이콘_나중에 구현 -->
+                         <!-- <i class="mdi mdi-magnify"></i> -->
+                        
+            
                 </div>
                 <div class="header-right">
                     <ul class="clearfix">
